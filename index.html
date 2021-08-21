@@ -14,17 +14,23 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <div id="container">
-        <form id="addTask" action="">
+    <div id="form">
+
+        <form id="addTask">
+            <label for="newTask">NEW TASK</label>
             <input 
-                type="text"
-                name="newTask"
-                required
-                placeholder="New task"
-            />
+            type="text"
+            name="newTask"
+            id="newTask"
+            required
+            placeholder="New task"
+            >
             <button>add</button>
         </form>
+    </div>
+
+    <div id="container">
+
     </div>
 
     <script src="./index.js"></script>

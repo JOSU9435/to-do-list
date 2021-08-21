@@ -8,7 +8,7 @@
 *{
     margin: 0;
     font-family: 'Quicksand';
-    color: #333;
+    color: var(--text-primary);
 }
 
 body{
@@ -21,14 +21,25 @@ body{
     padding: 20px;
 }
 
+#form{
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
 .task{
+    display: flex;
     padding: 10px 16px;
     margin: 20px 0;
-    border-bottom: 1px solid #fafafa;
+    /* border-bottom: 1px solid #fafafa; */
     font-size: 20px;
     color: var(--text-primary);
     margin-bottom: 8px;
     background-color: var(--bg-secondary);
+}
+
+.deleteButton{
+    margin-left: auto;
 }
 
 .task:hover{
