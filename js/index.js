@@ -1,5 +1,4 @@
 const handleDelete=(id) => {
-
     const data =JSON.parse(localStorage.getItem('list'));
 
     const updatedData=data.filter((elem,idx) => {
@@ -11,8 +10,6 @@ const handleDelete=(id) => {
 };
 
 const handleTaskDone= (id) => {
-
-    console.log(id);
 
     let data =JSON.parse(localStorage.getItem('list'));
 
@@ -36,7 +33,7 @@ const render=() => {
     if(data){
         data.forEach((task,idx) => {
 
-            let doneTask=`<button class="taskDone" id="${idx}">DONE</button>`
+            let doneTask=`<div class="taskDone"><i class="fas fa-check" id="${idx}"></i></div>`
             if(task.status){
                 doneTask='';
             }
@@ -44,7 +41,7 @@ const render=() => {
                     <h2>${task.info}</h2>
                     <div class="buttons">
                         ${doneTask}
-                        <button class="deleteButton" id="${idx}">DELETE</button>
+                        <div class="deleteButton"><i class="fas fa-trash-alt" id="${idx}"></i></div>
                     </div>
                 </div>`;
         });

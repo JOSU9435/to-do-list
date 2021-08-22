@@ -29,6 +29,7 @@ body{
 }
 
 #links{
+    display: flex;
     margin-left: auto;
     font-size: 20px;
 }
@@ -53,10 +54,26 @@ a{
 }
 
 .buttons{
+    display: flex;
     margin-left: auto;
 }
 
 .taskDone{
     border: 0;
-    background-color: var(--bg-primary);
+}
+
+i{
+    font-size: 33px;
+    transition: 0.2s;
+}
+
+.deleteButton{
+    margin-left: 15px;
+}
+
+i.fa-trash-alt:hover{
+    color: #E63946;
+}
+i.fa-check:hover{
+    color: #00EBA4;
 }
