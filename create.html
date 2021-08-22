@@ -4,30 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./create.css">
 
     <title>Document</title>
 </head>
 <body>
-    <div id="navbar">
-
-        <h1>TO DO LIST</h1>
-
-        <div id="links">
-            <a id href="/">list</a>
-            <a id href="/create.html">Add Task</a>
-        </div>
-    </div>
-
+    
     <div id="container">
-
+        <form id="addTask">
+            <label for="newTask">NEW TASK</label>
+            <input 
+            type="text"
+            name="newTask"
+            id="newTask"
+            required
+            placeholder="New task"
+            >
+            <button>add</button>
+        </form>
     </div>
 
-    <script src="./js/index.js"></script>
+    <script src="./js/create.js"></script>
 </body>
 </html>
