@@ -74,3 +74,8 @@ window.addEventListener('DOMContentLoaded',render);
 // console.log(localStorage.getItem('list'));
 // localStorage.clear();
 
+document.getElementById('allClear').addEventListener('click',() => {
+    const data=[];
+    localStorage.setItem('list',JSON.stringify(data));
+    window.location.reload();
+});

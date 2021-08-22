@@ -1,4 +1,5 @@
 :root{
+    font-size: 16px;
     --text-primary:#DFD5D3;
     --text-secondary:#BAB0B5;
     --bg-primary:#1A1F1F;
@@ -16,15 +17,16 @@ body{
 }
 
 #container{
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 20px;
+    max-width: 700px;
+    margin: 1.25rem auto;
+    padding: 1.25px;
 }
 
 #navbar{
     display: flex;
-    max-width: 600px;
+    max-width: 700px;
     margin: 20px auto;
+    margin-bottom: 0;
     padding: 20px;
 }
 
@@ -34,23 +36,52 @@ body{
     font-size: 20px;
 }
 
-a{
+a, div#allClear{
+    position: relative;
     text-decoration: none;
+    font-size: 1.5rem;
+    margin-left: 1.25rem;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    border-radius: 0.2rem;
+    border-top: 0;
+    border-bottom: 0;
+    /* background-color: blue; */
+}
+
+a::before, div#allClear::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 0;
+    height: 0;
+    background-color: var(--bg-secondary);
+    transition: 0.1s;
+    z-index: -1;
+    border-radius: 0.2rem;
+}
+
+a:hover::before, div#allClear:hover::before{
+    width: 100%;
+    height: 100%;
 }
 
 .task{
     display: flex;
-    padding: 10px 16px;
-    margin: 20px 0;
-    /* border-bottom: 1px solid #fafafa; */
-    font-size: 20px;
+    padding: 1rem 1rem;
+    margin: 1.25rem 1rem;
+    font-size: 1rem;
     color: var(--text-primary);
-    margin-bottom: 8px;
     background-color: var(--bg-secondary);
+    border-radius: 0.2rem;
+    transition: 0.1s;
 }
 
 .task:hover{
     box-shadow: 1px 3px 5px rgb(223, 213, 211,0.5);
+    /* box-shadow: 0 4px 8px 0 rgb(223, 213, 211,0.4), 0 6px 20px rgb(223, 213, 211,0.19); */
 }
 
 .buttons{
@@ -60,20 +91,35 @@ a{
 
 .taskDone{
     border: 0;
-}
-
-i{
-    font-size: 33px;
-    transition: 0.2s;
+    cursor: pointer;
 }
 
 .deleteButton{
-    margin-left: 15px;
+    margin-left: 1rem;
+    cursor: pointer;
 }
 
-i.fa-trash-alt:hover{
+i{
+    font-size: 2rem;
+    transition: 0.2s;
+}
+
+.deleteButton:hover i.fas{
     color: #E63946;
 }
-i.fa-check:hover{
+.taskDone:hover i.fas{
     color: #00EBA4;
+}
+
+#completionStatus{
+    background-color: var(--bg-secondary);
+    border: none;
+    border-radius: 0.2rem;
+    font-size: 1rem;
+    margin-left: 1.25rem;
+    padding-left: 0.4rem;
+}
+
+#completionStatus:focus{
+    outline: none;
 }
