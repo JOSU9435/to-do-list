@@ -1,6 +1,37 @@
 :root{
+    font-size: 16px;
     --text-primary:#DFD5D3;
     --text-secondary:#BAB0B5;
     --bg-primary:#1A1F1F;
-    --bg-secondary:#444554;
+    --bg-secondary:#333838;
+    --bg-item:#444554;
+}
+
+*{
+    margin: 0;
+    font-family: 'Quicksand';
+    color: var(--text-primary);
+}
+
+body{
+    background-image: linear-gradient(to right, var(--bg-secondary), var(--bg-primary));
+}
+
+#container{
+    max-width: 600px;
+    margin: 1.25rem auto;
+    padding: 0.5rem;
+}
+
+#addTask label{
+    display: block;
+}
+
+#addTask input {
+    width: 100%;
+    padding: 0.5rem 0.5px;
+    margin: 0.5rem 0;
+    border: 1px solid var(--bg-item);
+    box-sizing: border-box;
+    display: block;
 }
