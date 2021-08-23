@@ -15,8 +15,7 @@ const handleTaskDone= (id) => {
 
     data.forEach((elem,idx) => {
         if(id==idx){
-            elem.status=true;
-            const btn = document.getElementsByClassName('taskDone')[id];
+            elem.status='completed';
         }
     });
 
@@ -30,13 +29,16 @@ const render=() => {
 
     const data=JSON.parse(localStorage.getItem('list'));
 
+    const select=document.getElementById('completionStatus').value;
+    
     if(data){
         data.forEach((task,idx) => {
 
             let doneTask=`<div class="taskDone"><i class="fas fa-check" id="${idx}"></i></div>`
-            if(task.status){
+            if(task.status=='completed'){
                 doneTask='';
             }
+
             temp+=`<div class="task">
                     <h2>${task.info}</h2>
                     <div class="buttons">
@@ -59,8 +61,14 @@ const render=() => {
     taskDoneButtons.forEach(elem => {
         elem.addEventListener('click',(e) => handleTaskDone(e.target.id));
     });
+
     tasks.forEach((elem,idx) => {
-        if(data[idx].status){
+
+        if(select!='all' && select!=data[idx].status){
+            elem.style.display="none";
+        }
+        
+        if(data[idx].status=='completed'){
             elem.style.opacity="0.6";  
         }
     });
@@ -79,3 +87,5 @@ document.getElementById('allClear').addEventListener('click',() => {
     localStorage.setItem('list',JSON.stringify(data));
     window.location.reload();
 });
+
+document.getElementById('completionStatus').addEventListener('change',render);
