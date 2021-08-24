@@ -16,26 +16,31 @@
     <title>Document</title>
 </head>
 <body>
+
+    <div id="navbar">
+
+        <h1>Add a New Task</h1>
+        <div id="links">
+            <a id href="/">List</a>
+        </div>
+    </div>
     
     <div id="container">
         <form id="addTask">
-            <label for="newTask">NEW TASK</label>
+            <label for="newTask">TASK</label>
             <input 
             type="text"
             name="newTask"
             id="newTask"
             required
-            placeholder="New task"
             >
-            <label for="taskDetail">detail</label>
-            <input
+            <label for="taskDetail">DETAILS</label>
+            <textarea
                 name="detail" 
                 id="taskDetail"
-                placeholder="details"    
-            >
-
-            <!-- </textarea> -->
-            <button>add</button>
+            ></textarea>
+            
+            <button type="submit">Add</button>
         </form>
     </div>
 
