@@ -14,6 +14,7 @@ const addNewTask=(e) => {
 
     const newTask={
         info: form.newTask.value,
+        detail: form.detail.value,
         status: 'incomplete',
     };
 

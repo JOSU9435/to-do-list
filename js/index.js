@@ -1,4 +1,5 @@
-const handleDelete=(id) => {
+const handleDelete=(e,id) => {
+    e.stopPropagation();
     const data =JSON.parse(localStorage.getItem('list'));
 
     const updatedData=data.filter((elem,idx) => {
@@ -9,8 +10,8 @@ const handleDelete=(id) => {
     render();
 };
 
-const handleTaskDone= (id) => {
-
+const handleTaskDone= (e,id) => {
+    e.stopPropagation();
     let data =JSON.parse(localStorage.getItem('list'));
 
     data.forEach((elem,idx) => {
@@ -30,7 +31,7 @@ const render=() => {
     const data=JSON.parse(localStorage.getItem('list'));
 
     const select=document.getElementById('completionStatus').value;
-    
+
     if(data){
         data.forEach((task,idx) => {
 
@@ -55,14 +56,18 @@ const render=() => {
     const tasks=document.querySelectorAll('.task');
 
     deleteButtons.forEach(elem => {
-        elem.addEventListener('click',(e) => handleDelete(e.target.id));
+        elem.addEventListener('click',(e) => handleDelete(e,e.target.id));
     });
 
     taskDoneButtons.forEach(elem => {
-        elem.addEventListener('click',(e) => handleTaskDone(e.target.id));
+        elem.addEventListener('click',(e) => handleTaskDone(e,e.target.id));
     });
 
     tasks.forEach((elem,idx) => {
+        
+        elem.addEventListener('click', () => {
+            window.location.replace(`/details.html?id=${idx}`);
+        });
 
         if(select!='all' && select!=data[idx].status){
             elem.style.display="none";
@@ -84,8 +89,10 @@ window.addEventListener('DOMContentLoaded',render);
 
 document.getElementById('allClear').addEventListener('click',() => {
     const data=[];
-    localStorage.setItem('list',JSON.stringify(data));
-    window.location.reload();
+    if(confirm('do you want to remove all the task')){
+        localStorage.setItem('list',JSON.stringify(data));
+        window.location.reload();
+    }
 });
 
 document.getElementById('completionStatus').addEventListener('change',render);
