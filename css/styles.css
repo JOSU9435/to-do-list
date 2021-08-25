@@ -95,6 +95,7 @@ a:hover::before, div#allClear:hover::before{
 
 .task{
     display: flex;
+    align-items: center;
     position: relative;
     padding: 1rem 1rem;
     margin: 0.6rem 1rem;
@@ -104,6 +105,10 @@ a:hover::before, div#allClear:hover::before{
     background-color: var(--bg-item);
     border-radius: 0.2rem;
     transition: 0.2s;
+}
+
+.task h2{
+    overflow-x: hidden;
 }
 
 .task:hover{
@@ -117,6 +122,7 @@ a:hover::before, div#allClear:hover::before{
 
 .taskDone{
     border: 0;
+    margin-left: 1rem;
     cursor: pointer;
 }
 
@@ -145,7 +151,53 @@ i{
     margin-left: 1.25rem;
     padding-left: 0.4rem;
 }
+#completionStatus option {
+    background-color: var(--bg-item);
+    font-size: 1rem;
+}
 
 #completionStatus:focus{
     outline: none;
+}
+
+#noTask{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    flex-direction: column;
+    min-height: 4.75rem;
+    min-width: 27rem;
+    align-items: center;
+}
+
+#noTask h2{
+    font-size: 1.5rem;
+    margin: 0.25rem;
+}
+
+@media screen and (max-width:700px) {
+    #navbar{
+        flex-direction: column;
+        margin: 0;
+    }
+
+    #links{
+        width: 100%;
+        justify-content: space-around;
+        margin: 1rem 0;
+    }
+}
+
+
+@media screen and (max-width:450px) {
+
+    :root{
+        font-size: 10px;
+    }
+
+    #links{
+        justify-content: space-between;
+    }
 }

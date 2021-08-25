@@ -54,6 +54,10 @@ const render=() => {
 
     const select=document.getElementById('completionStatus').value;
 
+    if(data==null || data.length==0){
+        document.getElementById('noTask').style.display="flex";
+    }
+
     if(data){
         data.forEach((task,idx) => {
 
