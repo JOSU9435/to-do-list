@@ -18,10 +18,12 @@ body{
 }
 
 #container{
-    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
     margin: 1.25rem auto;
     padding: 0.5rem;
-    max-height: 80vh;
+    max-height: 79vh;
     overflow-y: scroll;
 }
 
@@ -42,7 +44,7 @@ body{
 
 #navbar{
     display: flex;
-    max-width: 700px;
+    max-width: 800px;
     margin: 20px auto;
     margin-bottom: 0;
     padding: 20px;
@@ -93,18 +95,19 @@ a:hover::before, div#allClear:hover::before{
 
 .task{
     display: flex;
+    position: relative;
     padding: 1rem 1rem;
-    margin: 1.25rem 1rem;
+    margin: 0.6rem 1rem;
+    order: 1;
     font-size: 1rem;
     color: var(--text-primary);
     background-color: var(--bg-item);
     border-radius: 0.2rem;
-    transition: 0.1s;
+    transition: 0.2s;
 }
 
 .task:hover{
-    box-shadow: 1px 3px 5px rgb(223, 213, 211,0.5);
-    /* box-shadow: 0 4px 8px 0 rgb(223, 213, 211,0.4), 0 6px 20px rgb(223, 213, 211,0.19); */
+    transform: scale(1.02);
 }
 
 .buttons{
