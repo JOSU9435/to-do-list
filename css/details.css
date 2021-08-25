@@ -21,6 +21,7 @@ body{
     max-width: 900px;
     margin: 1.25rem auto;
     padding: 0.5rem;
+    overflow: hidden;
 }
 
 #info, #detail{
@@ -32,27 +33,27 @@ body{
 }
 
 #info{
-    font-size: 3rem;
+    font-size: 2.5rem;
     border-bottom: 0.5rem solid var(--bg-item);
 }
 
 #detail{
     font-size: 1.75rem;
-    margin: 1.25rem 2rem;
 }
 
 #buttons{
     display: flex;
-    margin: 1.25rem 2rem;
+    margin: 4rem 2rem;
 }
 
 #taskDone{
-    margin-left: auto;
+    margin-right: 5rem;
     cursor: pointer;
+    border-radius: 0.2rem;
 }
 
 #deleteButton{
-    margin-left: 5rem;
+    margin-right: auto;
     cursor: pointer;
 }
 
@@ -66,4 +67,15 @@ i{
 }
 #taskDone:hover i.fas{
     color: #00EBA4;
+}
+
+@media screen and (max-width:600px) {
+
+    :root{
+        font-size: 8px;
+    }
+    
+    i{
+        font-size: 3rem;
+    }
 }

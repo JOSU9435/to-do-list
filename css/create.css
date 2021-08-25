@@ -66,13 +66,13 @@ body{
 #links{
     display: flex;
     margin-left: auto;
-    max-height: 2.5rem;
+    max-height: 3rem;
 }
 
 a{
     position: relative;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-left: 1.25rem;
     padding: 0.25rem 1rem;
     cursor: pointer;
@@ -119,4 +119,15 @@ a:hover::before{
     background-color: var(--text-secondary);
     color: var(--bg-item);
     font-weight: bold;
+}
+
+@media screen and (max-width:600px) {
+
+    :root{
+        font-size: 12px;
+    }
+
+    #container{
+        padding: 1.5rem;
+    }
 }
