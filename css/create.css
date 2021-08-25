@@ -18,20 +18,105 @@ body{
 }
 
 #container{
-    max-width: 600px;
+    max-width: 700px;
     margin: 1.25rem auto;
     padding: 0.5rem;
 }
 
 #addTask label{
+    font-size: 1.75rem;
     display: block;
 }
 
-#addTask input {
+#addTask input ,#addTask textarea {
     width: 100%;
-    padding: 0.5rem 0.5px;
-    margin: 0.5rem 0;
-    border: 1px solid var(--bg-item);
+    padding: 0.5rem 0.5rem;
+    margin: 1rem 0 2rem 0;
+    border: solid var(--bg-item);
     box-sizing: border-box;
     display: block;
+    resize: none;
+    background-color: var(--bg-item);
+    font-size: 1.5rem;
+    border-radius: 0.2rem;
+}
+
+#addTask textarea{
+    min-height: 15rem;
+    font-size: 1.25rem;
+}
+
+#addTask input:focus ,#addTask textarea:focus {
+    outline-color: var(--text-primary);
+    outline-style: solid;
+    outline-width: 0.1rem;
+}
+
+
+#navbar{
+    display: flex;
+    max-width: 700px;
+    margin: 1.25rem auto;
+    margin-bottom: 0;
+    padding: 1.25rem;
+    align-items: center;
+    border-bottom: 0.3rem solid var(--bg-item);
+}
+
+#links{
+    display: flex;
+    margin-left: auto;
+    max-height: 2.5rem;
+}
+
+a{
+    position: relative;
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin-left: 1.25rem;
+    padding: 0.25rem 1rem;
+    cursor: pointer;
+    border-radius: 0.2rem;
+    border-top: 0;
+    border-bottom: 0;
+}
+
+a::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 0;
+    height: 0;
+    background-color: var(--bg-item);
+    transition: 0.1s;
+    z-index: -1;
+    border-radius: 0.2rem;
+}
+
+a:hover::before{
+    width: 100%;
+    height: 100%;
+}
+
+#addTask button{
+    position: relative;
+    background-color: var(--bg-item);
+    border: none;
+    padding: 0.25rem 1rem;
+    color: var(--text-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0.2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+
+#addTask button:hover{
+    background-color: var(--text-secondary);
+    color: var(--bg-item);
+    font-weight: bold;
 }
