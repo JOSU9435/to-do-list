@@ -47,6 +47,7 @@ body{
 }
 
 #taskDone{
+    font-size: 1rem;
     margin-right: 5rem;
     cursor: pointer;
     border-radius: 0.2rem;
@@ -77,5 +78,19 @@ i{
     
     i{
         font-size: 3rem;
+    }
+    
+    #buttons{
+        display: flex;
+        justify-content: space-around;
+    }  
+    
+    #taskDone{
+        font-size: 1.5rem;
+    }
+    
+    #deleteButton{
+        margin-right: 0;
+        cursor: pointer;
     }
 }

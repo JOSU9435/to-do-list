@@ -200,4 +200,16 @@ i{
     #links{
         justify-content: space-between;
     }
+
+    i{
+        transition: 0s;
+    }
+
+    .deleteButton{
+        margin-left: 1.75rem;
+    }
+
+    .task:hover{
+        transform: scale(1);
+    }
 }
